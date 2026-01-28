@@ -13,7 +13,7 @@ const startBtn = document.getElementById("start");
 const stopBtn = document.getElementById("stop");
 const resetBtn = document.getElementById("reset");
 
-// Cercle SVG
+// CERCLE SVG
 const radius = 180;
 const circumference = 2 * Math.PI * radius;
 progressCircle.style.strokeDasharray = circumference;
@@ -25,7 +25,6 @@ function updateDisplay() {
   const seconds = time % 60;
   timeDisplay.textContent = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
 
-  // Cercle progressif
   const progress = time / duration;
   progressCircle.style.strokeDashoffset = circumference * (1 - progress);
 }
@@ -34,11 +33,11 @@ function updateDisplay() {
 function switchMode() {
   isFocus = !isFocus;
   if (isFocus) {
-    duration = 25 * 60;  // Focus
+    duration = 25 * 60; 
     modeText.textContent = "FOCUS";
   } else {
-    duration = 5 * 60;   // Pause
-    modeText.textContent = "PAUSE";
+    duration = 5 * 60; 
+    modeText.textContent = "BREAK";
   }
   time = duration;
   updateDisplay();
@@ -61,13 +60,11 @@ function startTimer() {
       time--;           
       updateDisplay();  
     } else {
-      // Fin du timer
       clearInterval(timerInterval);
       timerInterval = null;
       startBtn.disabled = false;
       stopBtn.disabled = true;
 
-      // Jouer la sonnerie
       const audio = new Audio("sounds/alarm.mp3");
       audio.play();
 
@@ -101,7 +98,7 @@ function resetTimer() {
     modeText.textContent = "FOCUS";
   } else {
     duration = 5 * 60;
-    modeText.textContent = "PAUSE";
+    modeText.textContent = "BREAK";
   }
   time = duration;
   updateDisplay();
@@ -112,6 +109,5 @@ startBtn.addEventListener("click", startTimer);
 stopBtn.addEventListener("click", stopTimer);
 resetBtn.addEventListener("click", resetTimer);
 
-// INIT
 updateDisplay();
 
