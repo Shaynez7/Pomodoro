@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>POMODORO</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&family=Playwrite+AU+TAS:wght@100..400&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <div class="wallpaper">
+        <video autoplay="autoplay" muted="" loop="infinite" src="img/lofi-chill.mp4"></video>
+    </div>
+        
+<div id="countdown">
+    <div class="circle">
+        <svg width="400" height="400">
+            <circle cx="200" cy="200" r="180"></circle>
+            <circle id="progress" cx="200" cy="200" r="180"></circle>
+        </svg>
+        <span id="time">25:00</span>
+        <span id="mode">FOCUS</span> 
+    </div>
+
+    <div class="controls">
+        <button id="start">START</button>
+        <button id="stop">STOP</button>
+        <button id="reset">RESET</button>
+    </div>
+</div>
+
+   
+
+</body>
+
+
+</html>
